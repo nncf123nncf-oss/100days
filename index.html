@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100日100プロダクト</title>
+<meta name="description" content="AIで解けると思っていなかった困りごとを、100日かけて100個解きます。">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+line-height:1.75;color:#1b2733;background:#f4f7fa;-webkit-text-size-adjust:100%}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 72px}
+header{padding:64px 0 40px;border-bottom:1px solid #dde5ee}
+.counter{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;
+color:#2f6fd0;background:#e6effb;border-radius:999px;padding:6px 14px;margin-bottom:20px}
+h1{margin:0 0 22px;font-size:clamp(23px,4.4vw,34px);line-height:1.5;letter-spacing:-.01em}
+.intro{margin:0 0 18px;font-size:16px;color:#3d4d5e}
+.creds{margin:0;padding:0;list-style:none}
+.creds li{font-size:13.5px;color:#5b6b7c;padding-left:16px;position:relative}
+.creds li::before{content:"—";position:absolute;left:0;color:#9aabbd}
+h2{font-size:19px;margin:52px 0 20px;letter-spacing:-.01em}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.card{background:#fff;border:1px solid #e2e9f1;border-radius:14px;overflow:hidden;
+display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 6px 24px rgba(28,53,84,.10);transform:translateY(-2px)}
+.shot{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;
+background:#eef2f7;border-bottom:1px solid #e2e9f1}
+.noshot{display:flex;align-items:center;justify-content:center;color:#9aabbd;font-size:13px}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.day{font-size:11.5px;font-weight:700;letter-spacing:.09em;color:#2f6fd0;margin-bottom:8px}
+.problem{font-size:15.5px;font-weight:700;line-height:1.6;margin:0 0 10px}
+.solution{font-size:13.5px;color:#5b6b7c;margin:0 0 16px;flex:1}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.links a{font-size:12.5px;text-decoration:none;padding:7px 13px;border-radius:8px;
+border:1px solid #cfdce9;color:#2f6fd0;background:#fff}
+.links a.primary{background:#2f6fd0;border-color:#2f6fd0;color:#fff}
+.links a:hover{opacity:.85}
+.cta{margin:56px 0 0;padding:36px 28px;background:#fff;border:1px solid #e2e9f1;
+border-radius:16px;text-align:center}
+.cta p{margin:0 0 20px;font-size:17px;font-weight:700}
+.cta a{display:inline-block;background:#2f6fd0;color:#fff;text-decoration:none;
+font-weight:700;padding:14px 34px;border-radius:10px}
+.cta .pending{font-size:13.5px;color:#8b9bad;font-weight:400}
+.cta .note{margin:14px 0 0;font-size:13px;color:#8b9bad;font-weight:400}
+.cta .sub{margin:18px 0 0;font-size:13.5px;font-weight:400}
+.cta .sub a{display:inline;background:none;color:#2f6fd0;padding:0;font-weight:400;
+text-decoration:underline;text-underline-offset:3px}
+footer{margin-top:44px;padding-top:22px;border-top:1px solid #dde5ee;
+font-size:12.5px;color:#8b9bad}
+.empty{color:#8b9bad;font-size:14px}
+@media(prefers-color-scheme:dark){
+body{background:#0f1519;color:#e4ebf2}
+header{border-color:#243039}
+.counter{background:#16283f;color:#7fb0f0}
+.intro{color:#aebccb}.creds li{color:#8b9bad}.creds li::before{color:#5b6b7c}
+.card{background:#161e25;border-color:#243039}
+.shot{background:#1b242c;border-color:#243039}
+.solution{color:#aebccb}
+.links a{background:#161e25;border-color:#2d3b47;color:#7fb0f0}
+.cta{background:#161e25;border-color:#243039}
+footer{border-color:#243039}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="counter">DAY 1 / 100</div>
+    <h1>AIで解けると思っていなかった困りごとを、100日かけて100個解きます。</h1>
+    <p class="intro">毎日ひとつ、誰かの困りごとを解くツールを作って公開しています。</p>
+    <ul class="creds">
+      <li>福岡100プラザ 高齢者向け生成AI講座 講師（2026.5）</li>
+    </ul>
+  </header>
+
+  <h2>これまでに作ったもの</h2>
+  <div class="grid">
+      <article class="card">
+        <img class="shot" src="assets/day-001.png" alt="やることが増えると、何から手をつけるべきか分からなくなる を解決する画面" loading="lazy">
+        <div class="body">
+          <div class="day">DAY 001</div>
+          <h3 class="problem">やることが増えると、何から手をつけるべきか分からなくなる</h3>
+          <p class="solution">タスクごとに優先度（高/中/低）を設定でき、優先度順に自動で並び替えて表示する</p>
+          <div class="links"><a class="primary" href="https://nncf123nncf-oss.github.io/todo-priority-app/" rel="noopener">使ってみる</a><a href="https://github.com/nncf123nncf-oss/todo-priority-app" rel="noopener">中身を見る</a></div>
+        </div>
+      </article>
+  </div>
+
+  <section class="cta">
+    <p>あなたの困りごとも、解けるかもしれません。</p>
+    <a href="https://forms.gle/k95wDW148Ey3229BA" rel="noopener">AI活用・導入を相談する</a>
+    <p class="note">「何から始めれば」の段階で大丈夫です。</p>
+    <p class="sub"><a href="https://lin.ee/UDpZuMb" rel="noopener">公式LINEで情報を受け取る</a></p>
+  </section>
+
+  <footer>
+    <p>みちAIワークス（MICHI AI WORKS）／代表 田中　泉</p>
+  </footer>
+
+</div>
+</body>
+</html>

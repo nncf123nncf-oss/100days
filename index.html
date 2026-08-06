@@ -23,8 +23,11 @@ h2{font-size:19px;margin:52px 0 20px;letter-spacing:-.01em}
 .card{background:#fff;border:1px solid #e2e9f1;border-radius:14px;overflow:hidden;
 display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
 .card:hover{box-shadow:0 6px 24px rgba(28,53,84,.10);transform:translateY(-2px)}
-.shot{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;
-background:#eef2f7;border-bottom:1px solid #e2e9f1}
+/* スクリーンショットは縦長にも横長にもなる（モバイル画面・縦に積んだUI等）。
+   cover で切ると、肝心の「解決している部分」が画面下にあるDayで切れてしまう。
+   1:1 の枠に contain で収め、切らずに全体を見せる。 */
+.shot{display:block;width:100%;aspect-ratio:1/1;object-fit:contain;object-position:center;
+background:#eef2f7;border-bottom:1px solid #e2e9f1;padding:10px}
 .noshot{display:flex;align-items:center;justify-content:center;color:#9aabbd;font-size:13px}
 .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
 .day{font-size:11.5px;font-weight:700;letter-spacing:.09em;color:#2f6fd0;margin-bottom:8px}
@@ -66,7 +69,7 @@ footer{border-color:#243039}
 <div class="wrap">
 
   <header>
-    <div class="counter">DAY 1 / 100</div>
+    <div class="counter">DAY 2 / 100</div>
     <h1>AIで解けると思っていなかった困りごとを、100日かけて100個解きます。</h1>
     <p class="intro">毎日ひとつ、誰かの困りごとを解くツールを作って公開しています。</p>
 
@@ -74,6 +77,15 @@ footer{border-color:#243039}
 
   <h2>これまでに作ったもの</h2>
   <div class="grid">
+      <article class="card">
+        <img class="shot" src="assets/day-002.png" alt="閉店後に投稿を考えられない を解決する画面" loading="lazy">
+        <div class="body">
+          <div class="day">DAY 002</div>
+          <h3 class="problem">閉店後に投稿を考えられない</h3>
+          <p class="solution">出来事・商品・伝えたい相手を入力すると、3媒体の下書きを同時に作る</p>
+          <div class="links"><a class="primary" href="なし" rel="noopener">使ってみる</a><a href="なし" rel="noopener">中身を見る</a></div>
+        </div>
+      </article>
       <article class="card">
         <img class="shot" src="assets/day-001.png" alt="やることが増えると、何から手をつけるべきか分からなくなる を解決する画面" loading="lazy">
         <div class="body">
